@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>鱼小红的前端小窝</title>
   
-  
+  <subtitle>博客</subtitle>
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-12-04T18:06:29.890Z</updated>
+  <updated>2022-12-05T16:53:37.912Z</updated>
   <id>http://example.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>鱼小红</name>
     
   </author>
   
@@ -21,15 +21,17 @@
     <link href="http://example.com/2022/12/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/"/>
     <id>http://example.com/2022/12/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</id>
     <published>2022-12-04T17:25:06.000Z</published>
-    <updated>2022-12-04T18:06:29.890Z</updated>
+    <updated>2022-12-05T16:53:37.912Z</updated>
     
-    <content type="html"><![CDATA[<p>##今天学习了建站方法，建立了一个只属于自己的博客。</p>]]></content>
+    <content type="html"><![CDATA[<p>##今天学习了建站方法，建立了一个只属于自己的博客。</p><p>md文件中sticky表示置顶，数值越大，置顶效果越强。</p><p>cover表示该文章的插图，若不写，则会被全局覆盖。</p><p>如果该文章不是原创的，而是转载的，则应该加上copyriagnt:false，这样在文章最后就不会显示版权信息.</p><p>给添加的图片进行注释：<img src="%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80" alt="注释内容"></p>]]></content>
     
     
       
       
     <summary type="html">&lt;p&gt;##今天学习了建站方法，建立了一个只属于自己的博客。&lt;/p&gt;
-</summary>
+&lt;p&gt;md文件中sticky表示置顶，数值越大，置顶效果越强。&lt;/p&gt;
+&lt;p&gt;cover表示该文章的插图，若不写，则会被全局覆盖。&lt;/p&gt;
+&lt;p&gt;如果该文章不是原创的，而是转载的，则应该加上copyriagnt:</summary>
       
     
     
