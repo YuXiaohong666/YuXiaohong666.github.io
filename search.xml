@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>ES6新特性-1</title>
+      <link href="/2022/12/06/ES6%E6%96%B0%E7%89%B9%E6%80%A7-1/"/>
+      <url>/2022/12/06/ES6%E6%96%B0%E7%89%B9%E6%80%A7-1/</url>
+      
+        <content type="html"><![CDATA[<p>##ES6中的let与var的区别：</p><p>1.用let声明变量的时候不可以重复声明，但是var可以。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">let</span> a=<span class="number">1</span>;  <span class="comment">//会报错</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> b=<span class="number">1</span>;  <span class="comment">//不会报错</span></span><br></pre></td></tr></table></figure><p>2.新增了块级作用域，可以只在代码块中起作用，外部访问不到。其他的还有全局作用域、函数作用域、eval与var保持一致。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> a=<span class="number">6</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);  <span class="comment">//会报错</span></span><br></pre></td></tr></table></figure><p>3.let不存在变量提升的特性，这点与var不同。</p><p>4.不影响作用域链。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>我的第一篇博客文章</title>
       <link href="/2022/12/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/"/>
       <url>/2022/12/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>

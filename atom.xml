@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-12-05T16:53:37.912Z</updated>
+  <updated>2022-12-06T03:16:29.461Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ES6新特性-1</title>
+    <link href="http://example.com/2022/12/06/ES6%E6%96%B0%E7%89%B9%E6%80%A7-1/"/>
+    <id>http://example.com/2022/12/06/ES6%E6%96%B0%E7%89%B9%E6%80%A7-1/</id>
+    <published>2022-12-06T03:09:33.000Z</published>
+    <updated>2022-12-06T03:16:29.461Z</updated>
+    
+    <content type="html"><![CDATA[<p>##ES6中的let与var的区别：</p><p>1.用let声明变量的时候不可以重复声明，但是var可以。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">let</span> a=<span class="number">1</span>;  <span class="comment">//会报错</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> b=<span class="number">1</span>;  <span class="comment">//不会报错</span></span><br></pre></td></tr></table></figure><p>2.新增了块级作用域，可以只在代码块中起作用，外部访问不到。其他的还有全局作用域、函数作用域、eval与var保持一致。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> a=<span class="number">6</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);  <span class="comment">//会报错</span></span><br></pre></td></tr></table></figure><p>3.let不存在变量提升的特性，这点与var不同。</p><p>4.不影响作用域链。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;##ES6中的let与var的区别：&lt;/p&gt;
+&lt;p&gt;1.用let声明变量的时候不可以重复声明，但是var可以。&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>我的第一篇博客文章</title>
