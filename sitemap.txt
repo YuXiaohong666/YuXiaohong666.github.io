@@ -7,3 +7,4 @@ http://example.com/categories/index.html
 http://example.com/tags/index.html
 http://example.com/
 http://example.com/tags/JavaScript/
+http://example.com/tags/ES6/
