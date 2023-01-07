@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-12-23T18:26:04.393Z</updated>
+  <updated>2023-01-07T09:12:48.405Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java</title>
+    <link href="http://example.com/2023/01/06/JAVA/"/>
+    <id>http://example.com/2023/01/06/JAVA/</id>
+    <published>2023-01-06T10:20:33.000Z</published>
+    <updated>2023-01-07T09:12:48.405Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、计算机编程基础"><a href="#一、计算机编程基础" class="headerlink" title="一、计算机编程基础"></a>一、计算机编程基础</h2><h3 id="1-人机交互方式"><a href="#1-人机交互方式" class="headerlink" title="1.人机交互方式"></a>1.人机交互方式</h3><p>(1).图形化界面(GUI)，简单直观，使用者易于接受且容易上手。<br>(2).命令行方式(CLI)，需要有一个控制台，输入特定的指令，让计算机完成一些操作。</p><h3 id="2-常用的一些命令行指令"><a href="#2-常用的一些命令行指令" class="headerlink" title="2.常用的一些命令行指令"></a>2.常用的一些命令行指令</h3><p>(1).dir： 列出当前目录下的文件以及文件夹<br>(2).md：  创建目录(文件夹)<br>(3).rd：  删除目录(需要保证目录是空的)<br>(4).cd：  进入指定目录<br>(5).cd..：退回到上一级目录<br>(6).cd\： 退回到根目录<br>(7).del： 删除文件<br>(8).exit：退出dos命令行</p><p>del后面也可以跟文件夹名，作用是把该文件夹内所有文件都删除。</p><h3 id="3-Java的两种核心机制"><a href="#3-Java的两种核心机制" class="headerlink" title="3.Java的两种核心机制"></a>3.Java的两种核心机制</h3><h4 id="1-Java虚拟机-JVM"><a href="#1-Java虚拟机-JVM" class="headerlink" title="(1).Java虚拟机(JVM)"></a>(1).Java虚拟机(JVM)</h4><p>Ⅰ.JVM是一个虚拟的计算机，具有指令集并使用不同的存储区域。负责执行指令，管理数据、内存、寄存器。<br>Ⅱ.对于不同平台，有不同的虚拟机。<br>Ⅲ.只有某平台提供了对应的Java虚拟机，Java程序才能在此平台运行。<br>Ⅳ.Java虚拟机机制屏蔽了底层运行平台的差别，实现了“一次编译，到处运行”。</p><h4 id="2-垃圾回收"><a href="#2-垃圾回收" class="headerlink" title="(2).垃圾回收"></a>(2).垃圾回收</h4><p>Ⅰ.不再使用的内存空间应回收，在C/C++等语言中，由程序员负责回收无用内存。<br>Ⅱ.垃圾回收在Java程序运行过程中自动进行，程序员无法精确控制和干预。<br>Ⅲ.还是有可能出现内存泄露和内存溢出的问题。</p><h3 id="4-JDK-JRE"><a href="#4-JDK-JRE" class="headerlink" title="4.JDK,JRE"></a>4.JDK,JRE</h3><h4 id="1-JDK-Java-Decelopment-Kit-Java开发工具包"><a href="#1-JDK-Java-Decelopment-Kit-Java开发工具包" class="headerlink" title="(1).JDK(Java Decelopment Kit)Java开发工具包"></a>(1).JDK(Java Decelopment Kit)Java开发工具包</h4><p>JDK是提供给Java开发人员使用的，其中包含了Java的开发工具，也包括了JRE，所以安装了JDK就不用单独安装JRE了。</p><h4 id="2-JRE-Java-Runtime-Environment-Java运行环境"><a href="#2-JRE-Java-Runtime-Environment-Java运行环境" class="headerlink" title="(2).JRE(Java Runtime Environment)Java运行环境"></a>(2).JRE(Java Runtime Environment)Java运行环境</h4><p>包括Java虚拟机和Java程序所需的核心类库等，如果想要运行一个开发好的Java程序，计算机只需要安装JRE即可</p><p><img src="/img/java_img/01.png" alt="JDK与JRE的关系"></p><h2 id="二、了解Java"><a href="#二、了解Java" class="headerlink" title="二、了解Java"></a>二、了解Java</h2><h3 id="1-注释"><a href="#1-注释" class="headerlink" title="1.注释"></a>1.注释</h3><h4 id="1-单行注释"><a href="#1-单行注释" class="headerlink" title="(1).单行注释"></a>(1).单行注释</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Class Hello&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span>&#123;</span><br><span class="line">        <span class="comment">//我是单行注释</span></span><br><span class="line">        System.out.println(<span class="string">&quot;Hello, World!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="2-多行注释"><a href="#2-多行注释" class="headerlink" title="(2).多行注释"></a>(2).多行注释</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Class Hello&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        我是多行注释，</span></span><br><span class="line"><span class="comment">        main方法是程序的入口！</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello, World!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="3-文档注释-Java特有"><a href="#3-文档注释-Java特有" class="headerlink" title="(3).文档注释(Java特有)"></a>(3).文档注释(Java特有)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">文档注释，可以被javadoc所解析，生成一套以网页文件形式体现的该程序的说明文档</span></span><br><span class="line"><span class="comment"><span class="doctag">@author</span> yuhong</span></span><br><span class="line"><span class="comment"><span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">Class Hello&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello, World!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、计算机编程基础&quot;&gt;&lt;a href=&quot;#一、计算机编程基础&quot; class=&quot;headerlink&quot; title=&quot;一、计算机编程基础&quot;&gt;&lt;/a&gt;一、计算机编程基础&lt;/h2&gt;&lt;h3 id=&quot;1-人机交互方式&quot;&gt;&lt;a href=&quot;#1-人机交互方式&quot; class=&quot;</summary>
+      
+    
+    
+    
+    
+    <category term="Java" scheme="http://example.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>ES6新特性</title>
