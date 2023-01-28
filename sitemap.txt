@@ -1,3 +1,4 @@
+http://example.com/2023/01/28/git/
 http://example.com/2023/01/06/JAVA/
 http://example.com/2023/01/09/Vue/
 http://example.com/2022/12/06/ES6%E6%96%B0%E7%89%B9%E6%80%A7/
@@ -10,3 +11,4 @@ http://example.com/tags/Java/
 http://example.com/tags/JavaScript/
 http://example.com/tags/ES6/
 http://example.com/tags/Vue/
+http://example.com/tags/git/

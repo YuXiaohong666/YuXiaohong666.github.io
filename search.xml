@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Git</title>
+      <link href="/2023/01/28/git/"/>
+      <url>/2023/01/28/git/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-初识Git"><a href="#1-初识Git" class="headerlink" title="1.初识Git"></a>1.初识Git</h2><h3 id="1-Git简介"><a href="#1-Git简介" class="headerlink" title="(1).Git简介"></a>(1).Git简介</h3><p>git是一个免费的、开源的分布式版本控制系统，可以快速高效的处理从小型到大型的各种项目。</p><h3 id="2-版本控制工具"><a href="#2-版本控制工具" class="headerlink" title="(2).版本控制工具"></a>(2).版本控制工具</h3><h4 id="集中版本控制工具：CVS、SVN、VSS"><a href="#集中版本控制工具：CVS、SVN、VSS" class="headerlink" title="集中版本控制工具：CVS、SVN、VSS"></a>集中版本控制工具：CVS、SVN、VSS</h4><p>优点：每个人都可以在一定程度上看到项目中的其他人在做些什么。管理员也可以轻松掌握每个开发者的权限，并且管理一个集中化的版本控制系统，要远比在各个客户端上维护本地数据库来的轻松容易。</p><p>缺点：中央服务器的单点故障，如果服务器宕机一小时，那么在这一小时内，谁都无法提交更新，也就无法协同工作。</p><h4 id="分布式版本控制工具：Git、Mercurial、Darcs"><a href="#分布式版本控制工具：Git、Mercurial、Darcs" class="headerlink" title="分布式版本控制工具：Git、Mercurial、Darcs"></a>分布式版本控制工具：Git、Mercurial、Darcs</h4><p>解决了集中式版本控制系统的缺陷</p><p>优点：服务器断网的情况下也可以进行开发（因为版本控制是在本地进行的）<br>每个客户端保存的也都是完整的项目（包含历史记录，更加安全）</p><h3 id="3-代码托管中心"><a href="#3-代码托管中心" class="headerlink" title="(3).代码托管中心"></a>(3).代码托管中心</h3><p>基于网络服务器的远程代码仓库，简称为远程库。</p><h4 id="局域网"><a href="#局域网" class="headerlink" title="局域网"></a>局域网</h4><p>GitLab</p><h4 id="互联网"><a href="#互联网" class="headerlink" title="互联网"></a>互联网</h4><p>GitHub<br>Gitee码云</p><h2 id="2-Git常用命令"><a href="#2-Git常用命令" class="headerlink" title="2.Git常用命令"></a>2.Git常用命令</h2><table><thead><tr><th>命令名称</th><th>作用</th></tr></thead><tbody><tr><td>git config –global user.name 用户名</td><td>设置用户签名</td></tr><tr><td>git config –global user.email 邮箱</td><td>设置用户签名</td></tr><tr><td>git init</td><td>初始化本地仓库</td></tr><tr><td>git status</td><td>查看本地库状态</td></tr><tr><td>git add 文件名</td><td>添加到暂存区</td></tr><tr><td>git commit -m “日志信息” 文件名</td><td>提交到本地库</td></tr><tr><td>git reflog</td><td>查看历史记录</td></tr><tr><td>git reset –hard 版本号</td><td>版本穿梭</td></tr></tbody></table><h3 id="初始化本地库"><a href="#初始化本地库" class="headerlink" title="初始化本地库"></a>初始化本地库</h3><p>初始化的含义：获取当前目录的控制权<br>语法：<mark>git init</mark></p><p><img src="/img/git_img/1.png" alt="初始化运行"></p><p>根据图片中我们可以看出在初始化后，自动为我们创建了一个.git的文件夹</p><h3 id="查看当前本地库状态"><a href="#查看当前本地库状态" class="headerlink" title="查看当前本地库状态"></a>查看当前本地库状态</h3><p>语法：<mark>git status</mark></p><p><img src="/img/git_img/2.png" alt="本地库状态"></p><p>On branch master：在当前分支上</p><p>No commits yet：当前还没有提交过任何文件</p><p>nothing to commit：没有可以提交的文件</p><p>在本地库中新建一个文件，再查看本地库状态</p><p><img src="/img/git_img/03.png" alt="创建一个文件之后本地库的状态"></p><p>Untracked files：没有追踪的文件</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue</title>
       <link href="/2023/01/09/Vue/"/>
       <url>/2023/01/09/Vue/</url>
