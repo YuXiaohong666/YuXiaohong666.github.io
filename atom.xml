@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-02-08T03:55:45.002Z</updated>
+  <updated>2023-03-13T06:26:12.333Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Golang</title>
+    <link href="http://example.com/2023/03/12/golang/"/>
+    <id>http://example.com/2023/03/12/golang/</id>
+    <published>2023-03-12T03:21:20.000Z</published>
+    <updated>2023-03-13T06:26:12.333Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Golang开山篇"><a href="#Golang开山篇" class="headerlink" title="Golang开山篇"></a>Golang开山篇</h1><h2 id="Golang的学习方向"><a href="#Golang的学习方向" class="headerlink" title="Golang的学习方向"></a>Golang的学习方向</h2><p><img src="/img/go_img/01.png"></p><h3 id="区块链的应用与开发"><a href="#区块链的应用与开发" class="headerlink" title="区块链的应用与开发"></a>区块链的应用与开发</h3><p><img src="/img/go_img/02.png" alt="区块链技术"></p><p><img src="/img/go_img/03.png" alt="后台服务应用"></p><p><img src="/img/go_img/04.png" alt="云计算/云服务后台应用"></p><h2 id="Go语言的特点"><a href="#Go语言的特点" class="headerlink" title="Go语言的特点"></a>Go语言的特点</h2><p>1.从C语言中继承了很多理念，包括表达式语法，控制结构，基础数据类型，调用参数传值，指针等等。<br>2.引入了包的概念，用于组织程序结构，Go语言的一个文件都要归属于一个包，而不能单独存在。<br>3.垃圾回收机制，内存自动回收。不需要开发人员管理。<br>4.天然并发（重要特点）<br>(1)从语言层面支持并发，实现简单。<br>(2)goroutine，轻量级线程，可实现大并发处理，高效利用多核。<br>(3)基于CPS并发模型实现。<br>5.吸收了管道通信机制，形成Go语言特有的管道channel，通过管道channel，可以实现不同的goroutine之间的相互通信。<br>6.函数可以返回多个值。<br>7.新的创新：比如切片、延时执行defer等。</p><h2 id="Windows下搭建Go开发环境-安装和配置SDK"><a href="#Windows下搭建Go开发环境-安装和配置SDK" class="headerlink" title="Windows下搭建Go开发环境-安装和配置SDK"></a>Windows下搭建Go开发环境-安装和配置SDK</h2><p>1.SDK的全称（Software Development Kit 软件开发工具包）<br>2.SDK是提供给开发人员使用的，其中包含了对应开发语言的工具包<br>3.SDK下载：<a href="https://golang.google.cn/dl/">https://golang.google.cn/dl/</a><br>4.测试GoSDK安装是否成功：<br><img src="/img/go_img/05.png"><br>5.配置环境变量：<br>(1)新建系统变量：<br><img src="/img/go_img/06.png"><br>(2)配置Path：<br><img src="/img/go_img/07.png"><br>(3)新建系统变量：<br><img src="/img/go_img/08.png" alt="指定Go项目路径"></p><h2 id="开发时Go的目录结构"><a href="#开发时Go的目录结构" class="headerlink" title="开发时Go的目录结构"></a>开发时Go的目录结构</h2><p><img src="/img/go_img/09.png"></p><h2 id="HelloWorld简单分析"><a href="#HelloWorld简单分析" class="headerlink" title="HelloWorld简单分析"></a>HelloWorld简单分析</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main  <span class="comment">//表达该go文件在main这个包中</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span>  <span class="comment">//引入fmt包，可以使用fmt中的函数</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;  <span class="comment">//func是一个关键字，表示后面是一个函数，main是主函数名，是程序的入口</span></span><br><span class="line">fmt.Println(<span class="string">&quot;hello,world!&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="Go语言的语法要求"><a href="#Go语言的语法要求" class="headerlink" title="Go语言的语法要求"></a>Go语言的语法要求</h2><h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><p><img src="/img/go_img/10.png"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Golang开山篇&quot;&gt;&lt;a href=&quot;#Golang开山篇&quot; class=&quot;headerlink&quot; title=&quot;Golang开山篇&quot;&gt;&lt;/a&gt;Golang开山篇&lt;/h1&gt;&lt;h2 id=&quot;Golang的学习方向&quot;&gt;&lt;a href=&quot;#Golang的学习方向&quot; c</summary>
+      
+    
+    
+    
+    
+    <category term="Golang" scheme="http://example.com/tags/Golang/"/>
+    
+  </entry>
   
   <entry>
     <title>数组的常见操作</title>
