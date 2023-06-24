@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-04-03T03:33:10.339Z</updated>
+  <updated>2023-06-24T17:12:05.847Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CocosCreator教程</title>
+    <link href="http://example.com/2023/06/06/CocosCreator/"/>
+    <id>http://example.com/2023/06/06/CocosCreator/</id>
+    <published>2023-06-06T01:09:33.000Z</published>
+    <updated>2023-06-24T17:12:05.847Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="场景管理"><a href="#场景管理" class="headerlink" title="场景管理"></a>场景管理</h2><h3 id="新建一个场景"><a href="#新建一个场景" class="headerlink" title="新建一个场景"></a>新建一个场景</h3><p>1.点击左上角的文件，在对话框中点击新建场景。<br>2.ctrl+n直接创建新的场景。<br>在创建好一个新的场景之后，我们发现左上角的层级管理器被恢复到默认的状态了。这就表明我们创建新的场景成功了，并且切换到了新的场景当中。<br>创建好之后，点击保存，将场景文件保存起来。<br>然后在左下角的资源管理器当中就可以进行手动的场景切换了。<br>##</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;场景管理&quot;&gt;&lt;a href=&quot;#场景管理&quot; class=&quot;headerlink&quot; title=&quot;场景管理&quot;&gt;&lt;/a&gt;场景管理&lt;/h2&gt;&lt;h3 id=&quot;新建一个场景&quot;&gt;&lt;a href=&quot;#新建一个场景&quot; class=&quot;headerlink&quot; title=&quot;新建一个场</summary>
+      
+    
+    
+    
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+    <category term="TypeScript" scheme="http://example.com/tags/TypeScript/"/>
+    
+    <category term="CocosCreator" scheme="http://example.com/tags/CocosCreator/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaWeb</title>
