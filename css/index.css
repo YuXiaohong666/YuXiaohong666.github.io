@@ -1388,6 +1388,17 @@ body {
 input::placeholder {
   color: var(--font-color);
 }
+#web_bg {
+  position: fixed;
+  z-index: -999;
+  width: 100%;
+  height: 100%;
+  background: url(/img/444ace24bdcf3bdd.jpg);
+  background-attachment: local;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 h1,
 h2,
 h3,
@@ -4201,6 +4212,12 @@ h1.page-title + .tag-cloud-list {
 #waline-wrap .wl-comment-actions > button:not(last-child) {
   padding-right: 4px;
 }
+#vcomment textarea {
+  background: url("../img/33.png") 100% 100% no-repeat;
+}
+#vcomment textarea:focus {
+  background-image: none;
+}
 .fireworks {
   position: fixed;
   top: 0;
@@ -5637,4 +5654,12 @@ blockquote.pullquote.right {
     padding-bottom: 40px;
     max-height: 75vh !important;
   }
+}
+#veditor {
+  background-image: url("../img/33.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: rgba(255,255,255,0);
+  resize: vertical;
 }
