@@ -9383,7 +9383,7 @@
               warn("class=\"".concat(staticClass, "\": ") +
                   'Interpolation inside attributes has been removed. ' +
                   'Use v-bind or the colon shorthand instead. For example, ' +
-                  'instead of <div class="">, use <div :class="val">.', el.rawAttrsMap['class']);
+                  'instead of <div class="{{ val }}">, use <div :class="val">.', el.rawAttrsMap['class']);
           }
       }
       if (staticClass) {
@@ -9421,7 +9421,7 @@
                   warn("style=\"".concat(staticStyle, "\": ") +
                       'Interpolation inside attributes has been removed. ' +
                       'Use v-bind or the colon shorthand instead. For example, ' +
-                      'instead of <div style="">, use <div :style="val">.', el.rawAttrsMap['style']);
+                      'instead of <div style="{{ val }}">, use <div :style="val">.', el.rawAttrsMap['style']);
               }
           }
           el.staticStyle = JSON.stringify(parseStyleText(staticStyle));
@@ -10477,7 +10477,7 @@
                       warn("".concat(name, "=\"").concat(value, "\": ") +
                           'Interpolation inside attributes has been removed. ' +
                           'Use v-bind or the colon shorthand instead. For example, ' +
-                          'instead of <div id="">, use <div :id="val">.', list[i]);
+                          'instead of <div id="{{ val }}">, use <div :id="val">.', list[i]);
                   }
               }
               addAttr(el, name, JSON.stringify(value), list[i]);
