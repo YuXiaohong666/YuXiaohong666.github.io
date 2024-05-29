@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>SSM框架</title>
+      <link href="/2024/05/27/SSM%E6%A1%86%E6%9E%B6/"/>
+      <url>/2024/05/27/SSM%E6%A1%86%E6%9E%B6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><h2 id="Maven快速简介和入门"><a href="#Maven快速简介和入门" class="headerlink" title="Maven快速简介和入门"></a>Maven快速简介和入门</h2><h3 id="Maven介绍"><a href="#Maven介绍" class="headerlink" title="Maven介绍"></a>Maven介绍</h3><p>Maven是一款为Java项目构建管理、依赖管理的工具，使用Maven可以自动化构建、测试、打包和发布项目。大大提高了开发效率和质量。</p><h3 id="Maven主要作用理解"><a href="#Maven主要作用理解" class="headerlink" title="Maven主要作用理解"></a>Maven主要作用理解</h3><h3 id="Maven安装和配置"><a href="#Maven安装和配置" class="headerlink" title="Maven安装和配置"></a>Maven安装和配置</h3><p>我们可以将需要的依赖项的信息编写到Maven工程的配置文件，Maven软件就会自动下载并复制这些依赖项到项目中，也会自动下载依赖所需要的依赖。确保依赖版本正确无冲突和依赖完整。</p><p>首先下载Maven3.6.3，并进行安装。然后配置环境变量。</p><p><img src="/img/ssm_img/1.png"></p><p>在系统变量中的path中也添加一条路径。</p><p><img src="/img/ssm_img/2.png"></p><p>然后打开cmd，检查maven版本是否可以正确读出。</p><p><img src="/img/ssm_img/3.png"></p><p>这样环境变量就配置成功了。</p><p>然后打开maven安装目录的conf文件夹下的setting.xml文件进行相关的配置。</p><p>定位到localRepository标签，添加如下标签：（用于修改jar包仓库的位置）</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>D:\CodingEnvironment\repo<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br></pre></td></tr></table></figure><p>定位到mirrors标签，添加如下标签：（修改下载位置，换为国内镜像，加快下载速度）</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span>&gt;</span>alimaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun maven<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br></pre></td></tr></table></figure><p>定位到profiles标签，添加如下标签：（指明当前的JDK版本）</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span>&gt;</span>jdk-17<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">activeByDefault</span>&gt;</span>true<span class="tag">&lt;/<span class="name">activeByDefault</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">jdk</span>&gt;</span>17<span class="tag">&lt;/<span class="name">jdk</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>17<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>17<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">maven.compiler.compilerVersion</span>&gt;</span>17<span class="tag">&lt;/<span class="name">maven.compiler.compilerVersion</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br></pre></td></tr></table></figure><p>然后在idea项目中，也修改好对应的maven设置。</p><p>打开设置，按照下图进行操作。</p><p><img src="/img/ssm_img/4.png"></p><p>注意：每次创建新项目之后都要确定一下maven的设置是否被重置了。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Spring </tag>
+            
+            <tag> SpringMVC </tag>
+            
+            <tag> MyBatis </tag>
+            
+            <tag> Maven </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C语言复习</title>
       <link href="/2024/03/11/C%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0/"/>
       <url>/2024/03/11/C%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0/</url>
