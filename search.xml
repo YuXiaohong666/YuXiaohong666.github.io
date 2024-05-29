@@ -109,6 +109,22 @@
             
             <tag> JavaWeb </tag>
             
+            <tag> JQuery </tag>
+            
+            <tag> XML </tag>
+            
+            <tag> JSP </tag>
+            
+            <tag> EL表达式 </tag>
+            
+            <tag> JSTL标签库 </tag>
+            
+            <tag> Cookie </tag>
+            
+            <tag> Session </tag>
+            
+            <tag> JSON </tag>
+            
         </tags>
       
     </entry>
