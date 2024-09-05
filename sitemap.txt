@@ -23,9 +23,9 @@ http://example.com/tags/SpringMVC/
 http://example.com/tags/MyBatis/
 http://example.com/tags/Maven/
 http://example.com/tags/Vue/
-http://example.com/tags/Java/
-http://example.com/tags/Golang/
 http://example.com/tags/git/
+http://example.com/tags/Golang/
+http://example.com/tags/Java/
 http://example.com/tags/JavaWeb/
 http://example.com/tags/JQuery/
 http://example.com/tags/XML/
