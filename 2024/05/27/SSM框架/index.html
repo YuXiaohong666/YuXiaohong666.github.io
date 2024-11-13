@@ -1,0 +1,540 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>SSM框架 | 鱼小红的前端小窝</title><meta name="author" content="鱼小红"><meta name="copyright" content="鱼小红"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="MavenMaven快速简介和入门Maven介绍Maven是一款为Java项目构建管理、依赖管理的工具，使用Maven可以自动化构建、测试、打包和发布项目。大大提高了开发效率和质量。 Maven主要作用理解Maven安装和配置我们可以将需要的依赖项的信息编写到Maven工程的配置文件，Maven软件就会自动下载并复制这些依赖项到项目中，也会自动下载依赖所需要的依赖。确保依赖版本正确无冲突和依赖完整">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSM框架">
+<meta property="og:url" content="http://example.com/2024/05/27/SSM%E6%A1%86%E6%9E%B6/index.html">
+<meta property="og:site_name" content="鱼小红的前端小窝">
+<meta property="og:description" content="MavenMaven快速简介和入门Maven介绍Maven是一款为Java项目构建管理、依赖管理的工具，使用Maven可以自动化构建、测试、打包和发布项目。大大提高了开发效率和质量。 Maven主要作用理解Maven安装和配置我们可以将需要的依赖项的信息编写到Maven工程的配置文件，Maven软件就会自动下载并复制这些依赖项到项目中，也会自动下载依赖所需要的依赖。确保依赖版本正确无冲突和依赖完整">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020011822264939.png">
+<meta property="article:published_time" content="2024-05-27T01:32:53.000Z">
+<meta property="article:modified_time" content="2024-09-03T10:35:07.260Z">
+<meta property="article:author" content="鱼小红">
+<meta property="article:tag" content="Spring">
+<meta property="article:tag" content="SpringMVC">
+<meta property="article:tag" content="MyBatis">
+<meta property="article:tag" content="Maven">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2020011822264939.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/05/27/SSM%E6%A1%86%E6%9E%B6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":true,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'SSM框架',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(img/background.png);"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://img-blog.csdnimg.cn/2020011822264939.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">鱼小红的前端小窝</span></a><a class="nav-page-title" href="/"><span class="site-name">SSM框架</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">SSM框架</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-27T01:32:53.000Z" title="发表于 2024-05-27 09:32:53">2024-05-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-03T10:35:07.260Z" title="更新于 2024-09-03 18:35:07">2024-09-03</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">7.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>26分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;已经过了&quot;,&quot;messageNext&quot;:&quot;天自上次更新，文章内容可能已过时。&quot;,&quot;postUpdate&quot;:&quot;2024-09-03 18:35:07&quot;}" hidden></div><h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><h2 id="Maven快速简介和入门"><a href="#Maven快速简介和入门" class="headerlink" title="Maven快速简介和入门"></a>Maven快速简介和入门</h2><h3 id="Maven介绍"><a href="#Maven介绍" class="headerlink" title="Maven介绍"></a>Maven介绍</h3><p>Maven是一款为Java项目构建管理、依赖管理的工具，使用Maven可以自动化构建、测试、打包和发布项目。大大提高了开发效率和质量。</p>
+<h3 id="Maven主要作用理解"><a href="#Maven主要作用理解" class="headerlink" title="Maven主要作用理解"></a>Maven主要作用理解</h3><h3 id="Maven安装和配置"><a href="#Maven安装和配置" class="headerlink" title="Maven安装和配置"></a>Maven安装和配置</h3><p>我们可以将需要的依赖项的信息编写到Maven工程的配置文件，Maven软件就会自动下载并复制这些依赖项到项目中，也会自动下载依赖所需要的依赖。确保依赖版本正确无冲突和依赖完整。</p>
+<p>首先下载Maven3.6.3，并进行安装。然后配置环境变量。</p>
+<p><img src="/img/ssm_img/1.png"></p>
+<p>在系统变量中的path中也添加一条路径。</p>
+<p><img src="/img/ssm_img/2.png"></p>
+<p>然后打开cmd，检查maven版本是否可以正确读出。</p>
+<p><img src="/img/ssm_img/3.png"></p>
+<p>这样环境变量就配置成功了。</p>
+<p>然后打开maven安装目录的conf文件夹下的setting.xml文件进行相关的配置。</p>
+<p>定位到localRepository标签，添加如下标签：（用于修改jar包仓库的位置）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>D:\CodingEnvironment\repo<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>定位到mirrors标签，添加如下标签：（修改下载位置，换为国内镜像，加快下载速度）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span>&gt;</span>alimaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun maven<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>定位到profiles标签，添加如下标签：（指明当前的JDK版本）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span>&gt;</span>jdk-17<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">activeByDefault</span>&gt;</span>true<span class="tag">&lt;/<span class="name">activeByDefault</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">jdk</span>&gt;</span>17<span class="tag">&lt;/<span class="name">jdk</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>17<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>17<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">maven.compiler.compilerVersion</span>&gt;</span>17<span class="tag">&lt;/<span class="name">maven.compiler.compilerVersion</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后在idea项目中，也修改好对应的maven设置。</p>
+<p>打开设置，按照下图进行操作。</p>
+<p><img src="/img/ssm_img/4.png"></p>
+<p>注意：每次创建新项目之后都要确定一下maven的设置是否被重置了。</p>
+<h2 id="基于IDEA的Maven工程的创建"><a href="#基于IDEA的Maven工程的创建" class="headerlink" title="基于IDEA的Maven工程的创建"></a>基于IDEA的Maven工程的创建</h2><h3 id="梳理Maven工程GAVP属性"><a href="#梳理Maven工程GAVP属性" class="headerlink" title="梳理Maven工程GAVP属性"></a>梳理Maven工程GAVP属性</h3><blockquote>
+<p>Maven工程相对之前的工程，多出一组gavp属性，gav需要我们在创建项目的时指定，p有默认值，后期通过配置文件修改。既然要填写的属性，我们先行了解下这组属性的含义!</p>
+</blockquote>
+<p>Maven 中的 GAVP 是指 GroupId、ArtifactId、Version、Packaging 等四个属性的缩写，其中前三个是必要的，而 Packaging 属性为可选项。这四个属性主要为每个项目在maven仓库总做一个标识，类似人的《姓-名》。有了具体标识，方便maven软件对项目进行管理和互相引用！</p>
+<h4 id="GAV遵循一下规则"><a href="#GAV遵循一下规则" class="headerlink" title="GAV遵循一下规则"></a>GAV遵循一下规则</h4><ol>
+<li><p><strong>GroupID</strong>格式：com.{公司&#x2F;BU }.业务线.[子业务线]，最多 4 级。</p>
+<ol>
+<li>说明：{公司&#x2F;BU} 例如：alibaba&#x2F;taobao&#x2F;tmall&#x2F;aliexpress 等 BU 一级；子业务线可选。</li>
+<li>正例：com.taobao.tddl 或 com.alibaba.sourcing.multilang  com.atguigu.java。</li>
+</ol>
+</li>
+<li><p><strong>ArtifactID</strong> 格式：产品线名-模块名。语义不重复不遗漏，先到仓库中心去查证一下。</p>
+<ol>
+<li>正例：tc-client &#x2F; uic-api &#x2F; tair-tool &#x2F; bookstore</li>
+</ol>
+</li>
+<li><p><strong>Version版本号格式推荐</strong>：主版本号.次版本号.修订号 1.0.0</p>
+<ol>
+<li>主版本号：当做了不兼容的 API 修改，或者增加了能改变产品方向的新功能。</li>
+<li>次版本号：当做了向下兼容的功能性新增（新增类、接口等）。</li>
+<li>修订号：修复 bug，没有修改方法签名的功能加强，保持 API 兼容性。</li>
+<li>例如： 初始→1.0.0  修改bug → 1.0.1  功能调整 → 1.1.1等。</li>
+</ol>
+</li>
+</ol>
+<h4 id="Packaging定义规则"><a href="#Packaging定义规则" class="headerlink" title="Packaging定义规则"></a><strong>Packaging定义规则</strong></h4><ol>
+<li>指示将项目打包为什么类型的文件，idea根据packaging值，识别maven项目类型！</li>
+<li>packaging 属性为 jar（默认值），代表普通的Java工程，打包以后是.jar结尾的文件。</li>
+<li>packaging 属性为 war，代表Java的web工程，打包以后.war结尾的文件。</li>
+<li>packaging 属性为 pom，代表不会打包，用来做继承的父工程。</li>
+</ol>
+<h3 id="IDEA构建Maven-JavaSE工程"><a href="#IDEA构建Maven-JavaSE工程" class="headerlink" title="IDEA构建Maven JavaSE工程"></a>IDEA构建Maven JavaSE工程</h3><p>首先，新建一个空项目，然后右键空项目新建Java工程，选择Maven进行构建。</p>
+<p><img src="/img/ssm_img/5.png"></p>
+<h3 id="IDEA构建Maven-JavaEE工程"><a href="#IDEA构建Maven-JavaEE工程" class="headerlink" title="IDEA构建Maven JavaEE工程"></a>IDEA构建Maven JavaEE工程</h3><h4 id="手动创建web项目"><a href="#手动创建web项目" class="headerlink" title="手动创建web项目"></a>手动创建web项目</h4><p>新建一个java模块，然后，手动在main文件夹下创建webapp以及WEB-INF文件夹，包括web.xml文件。</p>
+<p>在pom.xml文件中添加标签：&lt; packages &gt;war&lt; &#x2F;packages &gt;。</p>
+<p>然后点击maven更新按钮，wenapp文件夹就会出现web工程的标识。</p>
+<p><img src="/img/ssm_img/6.png"></p>
+<h4 id="使用插件创建web项目"><a href="#使用插件创建web项目" class="headerlink" title="使用插件创建web项目"></a>使用插件创建web项目</h4><p>安装JBLJavaToWeb插件</p>
+<p>新建Java模块</p>
+<p>右键模块，JBLJavaToWeb，然后刷新Maven即可</p>
+<h3 id="Maven工程项目结构说明"><a href="#Maven工程项目结构说明" class="headerlink" title="Maven工程项目结构说明"></a>Maven工程项目结构说明</h3><p>Maven 是一个强大的构建工具，它提供一种标准化的项目结构，可以帮助开发者更容易地管理项目的依赖、构建、测试和发布等任务。以下是 Maven Web 程序的文件结构及每个文件的作用：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">|-- pom.xml                               # Maven 项目管理文件 </span><br><span class="line">|-- src</span><br><span class="line">    |-- main                              # 项目主要代码</span><br><span class="line">    |   |-- java                          # Java 源代码目录</span><br><span class="line">    |   |   `-- com/example/myapp         # 开发者代码主目录</span><br><span class="line">    |   |       |-- controller            # 存放 Controller 层代码的目录</span><br><span class="line">    |   |       |-- service               # 存放 Service 层代码的目录</span><br><span class="line">    |   |       |-- dao                   # 存放 DAO 层代码的目录</span><br><span class="line">    |   |       `-- model                 # 存放数据模型的目录</span><br><span class="line">    |   |-- resources                     # 资源目录，存放配置文件、静态资源等</span><br><span class="line">    |   |   |-- log4j.properties          # 日志配置文件</span><br><span class="line">    |   |   |-- spring-mybatis.xml        # Spring Mybatis 配置文件</span><br><span class="line">    |   |   `-- static                    # 存放静态资源的目录</span><br><span class="line">    |   |       |-- css                   # 存放 CSS 文件的目录</span><br><span class="line">    |   |       |-- js                    # 存放 JavaScript 文件的目录</span><br><span class="line">    |   |       `-- images                # 存放图片资源的目录</span><br><span class="line">    |   `-- webapp                        # 存放 WEB 相关配置和资源</span><br><span class="line">    |       |-- WEB-INF                   # 存放 WEB 应用配置文件</span><br><span class="line">    |       |   |-- web.xml               # Web 应用的部署描述文件</span><br><span class="line">    |       |   `-- classes               # 存放编译后的 class 文件</span><br><span class="line">    |       `-- index.html                # Web 应用入口页面</span><br><span class="line">    `-- test                              # 项目测试代码</span><br><span class="line">        |-- java                          # 单元测试目录</span><br><span class="line">        `-- resources                     # 测试资源目录</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>pom.xml：Maven 项目管理文件，用于描述项目的依赖和构建配置等信息。</li>
+<li>src&#x2F;main&#x2F;java：存放项目的 Java 源代码。</li>
+<li>src&#x2F;main&#x2F;resources：存放项目的资源文件，如配置文件、静态资源等。</li>
+<li>src&#x2F;main&#x2F;webapp&#x2F;WEB-INF：存放 Web 应用的配置文件。</li>
+<li>src&#x2F;main&#x2F;webapp&#x2F;index.html：Web 应用的入口页面。</li>
+<li>src&#x2F;test&#x2F;java：存放项目的测试代码。</li>
+<li>src&#x2F;test&#x2F;resources：存放测试相关的资源文件，如测试配置文件等。</li>
+</ul>
+<h2 id="Maven核心功能依赖和构建管理"><a href="#Maven核心功能依赖和构建管理" class="headerlink" title="Maven核心功能依赖和构建管理"></a>Maven核心功能依赖和构建管理</h2><h3 id="依赖管理和配置"><a href="#依赖管理和配置" class="headerlink" title="依赖管理和配置"></a>依赖管理和配置</h3><p>Maven 依赖管理是 Maven 软件中最重要的功能之一。Maven 的依赖管理能够帮助开发人员自动解决软件包依赖问题，使得开发人员能够轻松地将其他开发人员开发的模块或第三方框架集成到自己的应用程序或模块中，避免出现版本冲突和依赖缺失等问题。</p>
+<p>我们通过定义 POM 文件，Maven 能够自动解析项目的依赖关系，并通过 Maven <strong>仓库自动</strong>下载和管理依赖，从而避免了手动下载和管理依赖的繁琐工作和可能引发的版本冲突问题。</p>
+<p>重点: 编写pom.xml文件!</p>
+<p>maven项目信息属性配置和读取：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 模型版本 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 公司或者组织的唯一标志，并且配置时生成的路径也是由此生成， 如com.companyname.project-group，maven会将该项目打成的jar包放本地路径：/com/companyname/project-group --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.companyname.project-group<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 项目的唯一ID，一个groupId下面可能多个项目，就是靠artifactId来区分的 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>project<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 版本号 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--打包方式</span></span><br><span class="line"><span class="comment">    默认：jar</span></span><br><span class="line"><span class="comment">    jar指的是普通的java项目打包方式！ 项目打成jar包！</span></span><br><span class="line"><span class="comment">    war指的是web项目打包方式！项目打成war包！</span></span><br><span class="line"><span class="comment">    pom不会讲项目打包！这个项目作为父工程，被其他工程聚合或者继承！后面会讲解两个概念</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">packaging</span>&gt;</span>jar/pom/war<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>依赖管理和添加：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">   通过编写依赖jar包的gav必要属性，引入第三方依赖！</span></span><br><span class="line"><span class="comment">   scope属性是可选的，可以指定依赖生效范围！</span></span><br><span class="line"><span class="comment">   依赖信息查询方式：</span></span><br><span class="line"><span class="comment">      1. maven仓库信息官网 https://mvnrepository.com/</span></span><br><span class="line"><span class="comment">      2. mavensearch插件搜索</span></span><br><span class="line"><span class="comment"> --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 引入具体的依赖包 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.17<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">            生效范围</span></span><br><span class="line"><span class="comment">            - compile ：main目录 test目录  打包打包 [默认]</span></span><br><span class="line"><span class="comment">            - provided：main目录 test目录  Servlet</span></span><br><span class="line"><span class="comment">            - runtime： 打包运行           MySQL</span></span><br><span class="line"><span class="comment">            - test:    test目录           junit</span></span><br><span class="line"><span class="comment">         --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>依赖版本提取和维护:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--声明版本--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--命名随便,内部制定版本号即可！--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">junit.version</span>&gt;</span>4.11<span class="tag">&lt;/<span class="name">junit.version</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 也可以通过 maven规定的固定的key，配置maven的参数！如下配置编码格式！--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.reporting.outputEncoding</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--引用properties声明版本 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;junit.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="依赖传递和冲突"><a href="#依赖传递和冲突" class="headerlink" title="依赖传递和冲突"></a>依赖传递和冲突</h3><p><strong>依赖传递</strong>指的是当一个模块或库 A 依赖于另一个模块或库 B，而 B 又依赖于模块或库 C，那么 A 会间接依赖于 C。这种依赖传递结构可以形成一个依赖树。当我们引入一个库或框架时，构建工具（如 Maven、Gradle）会自动解析和加载其所有的直接和间接依赖，确保这些依赖都可用。</p>
+<p>依赖传递的作用是：</p>
+<ol>
+<li>减少重复依赖：当多个项目依赖同一个库时，Maven 可以自动下载并且只下载一次该库。这样可以减少项目的构建时间和磁盘空间。</li>
+<li>自动管理依赖: Maven 可以自动管理依赖项，使用依赖传递，简化了依赖项的管理，使项目构建更加可靠和一致。</li>
+<li>确保依赖版本正确性：通过依赖传递的依赖，之间都不会存在版本兼容性问题，确实依赖的版本正确性！</li>
+</ol>
+<p>依赖传递演示：</p>
+<p>项目中，需要导入jackson相关的依赖，通过之前导入经验，jackson需要导入三个依赖，分别为：</p>
+<p><img src="/img/ssm_img/7.png"></p>
+<p>通过查看网站介绍的依赖传递特性：data-bind中，依赖其他两个依赖</p>
+<p><img src="/img/ssm_img/8.png"></p>
+<p>最佳导入：直接可以导入data-bind，自动依赖传递需要的依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-databind<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.15.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>依赖冲突演示：</p>
+<p>当直接引用或者间接引用出现了相同的jar包! 这时呢，一个项目就会出现相同的重复jar包，这就算作冲突！依赖冲突避免出现重复依赖，并且终止依赖传递！</p>
+<p><img src="/img/ssm_img/9.png"></p>
+<p>maven自动解决依赖冲突问题能力，会按照自己的原则，进行重复依赖选择。同时也提供了手动解决的冲突的方式，不过不推荐！</p>
+<p>解决依赖冲突（如何选择重复依赖）方式：</p>
+<ol>
+<li><p>自动选择原则</p>
+<ul>
+<li><p>短路优先原则（第一原则）</p>
+<p>A—&gt;B—&gt;C—&gt;D—&gt;E—&gt;X(version 0.0.1)</p>
+<p>A—&gt;F—&gt;X(version 0.0.2)</p>
+<p>则A依赖于X(version 0.0.2)。</p>
+</li>
+<li><p>依赖路径长度相同情况下，则“先声明优先”（第二原则）</p>
+<p>A—&gt;E—&gt;X(version 0.0.1)</p>
+<p>A—&gt;F—&gt;X(version 0.0.2)</p>
+<p>在&lt;depencies&gt;&lt;&#x2F;depencies&gt;中，先声明的，路径相同，会优先选择！</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="依赖导入失败场景和解决方案"><a href="#依赖导入失败场景和解决方案" class="headerlink" title="依赖导入失败场景和解决方案"></a>依赖导入失败场景和解决方案</h3><p>在使用 Maven 构建项目时，可能会发生依赖项下载错误的情况，主要原因有以下几种：</p>
+<ol>
+<li>下载依赖时出现网络故障或仓库服务器宕机等原因，导致无法连接至 Maven 仓库，从而无法下载依赖。</li>
+<li>依赖项的版本号或配置文件中的版本号错误，或者依赖项没有正确定义，导致 Maven 下载的依赖项与实际需要的不一致，从而引发错误。</li>
+<li>本地 Maven 仓库或缓存被污染或损坏，导致 Maven 无法正确地使用现有的依赖项，并且也无法重新下载！</li>
+</ol>
+<p>解决方案：</p>
+<ol>
+<li><p>检查网络连接和 Maven 仓库服务器状态。</p>
+</li>
+<li><p>确保依赖项的版本号与项目对应的版本号匹配，并检查 POM 文件中的依赖项是否正确。</p>
+</li>
+<li><p>清除本地 Maven 仓库缓存（lastUpdated 文件），因为只要存在lastupdated缓存文件，刷新也不会重新下载。本地仓库中，根据依赖的gav属性依次向下查找文件夹，最终删除内部的文件，刷新重新下载即可！</p>
+<p>例如： pom.xml依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>druid<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>文件：</p>
+<p><img src="/img/ssm_img/10.png"></p>
+<p>脚本使用：</p>
+<p><a href="file/%E6%B8%85%E7%90%86maven%E9%94%99%E8%AF%AF%E7%BC%93%E5%AD%98_7g0qEFY8sn.bat" title="清理maven错误缓存.bat">清理maven错误缓存.bat</a></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">使用记事本打开</span><br><span class="line">set REPOSITORY_PATH=D:\repository  改成你本地仓库地址即可！</span><br><span class="line">点击运行脚本，即可自动清理本地错误缓存文件！！</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="扩展构建管理和插件配置"><a href="#扩展构建管理和插件配置" class="headerlink" title="扩展构建管理和插件配置"></a>扩展构建管理和插件配置</h3><p><strong>构建概念:</strong></p>
+<p>项目构建是指将源代码、依赖库和资源文件等转换成可执行或可部署的应用程序的过程，在这个过程中包括编译源代码、链接依赖库、打包和部署等多个步骤。</p>
+<p><img src="/img/ssm_img/11.png"></p>
+<p><strong>主动触发场景：</strong></p>
+<ul>
+<li>重新编译 : 编译不充分, 部分文件没有被编译!</li>
+<li>打包 : 独立部署到外部服务器软件,打包部署</li>
+<li>部署本地或者私服仓库 : maven工程加入到本地或者私服仓库,供其他工程使用</li>
+</ul>
+<p><strong>命令方式构建:</strong></p>
+<p>语法: mvn 构建命令  构建命令….</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>mvn clean</td>
+<td>清理编译或打包后的项目结构,删除target文件夹</td>
+</tr>
+<tr>
+<td>mvn compile</td>
+<td>编译项目，生成target文件</td>
+</tr>
+<tr>
+<td>mvn test</td>
+<td>执行测试源码 (测试)</td>
+</tr>
+<tr>
+<td>mvn site</td>
+<td>生成一个项目依赖信息的展示页面</td>
+</tr>
+<tr>
+<td>mvn package</td>
+<td>打包项目，生成war &#x2F; jar 文件</td>
+</tr>
+<tr>
+<td>mvn install</td>
+<td>打包后上传到maven本地仓库(本地部署)</td>
+</tr>
+<tr>
+<td>mvn deploy</td>
+<td>只打包，上传到maven私服仓库(私服部署)</td>
+</tr>
+</tbody></table>
+<p><strong>可视化方式构建:</strong></p>
+<p><img src="/img/ssm_img/12.png"></p>
+<p><strong>构建命令周期:</strong></p>
+<p>构建生命周期可以理解成是一组固定构建命令的有序集合，触发周期后的命令，会自动触发周期前的命令！也是一种简化构建的思路!</p>
+<ul>
+<li><p>清理周期：主要是对项目编译生成文件进行清理</p>
+<p>包含命令：clean</p>
+</li>
+<li><p>默认周期：定义了真正构件时所需要执行的所有步骤，它是生命周期中最核心的部分</p>
+<p>包含命令：compile - test - package - install &#x2F; deploy</p>
+</li>
+<li><p>报告周期</p>
+<p>包含命令：site</p>
+<p>打包: mvn clean package 本地仓库: mvn clean install</p>
+</li>
+</ul>
+<p><strong>最佳使用方案:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">打包: mvn clean package</span><br><span class="line">重新编译: mvn clean compile</span><br><span class="line">本地部署: mvn clean install </span><br></pre></td></tr></table></figure>
+
+<p><strong>周期，命令和插件:</strong></p>
+<p>周期→包含若干命令→包含若干插件!</p>
+<p>使用周期命令构建，简化构建过程！</p>
+<p>最终进行构建的是插件！</p>
+<p>插件配置:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!-- jdk17 和 war包版本插件不匹配 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-war-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Maven继承和聚合特性"><a href="#Maven继承和聚合特性" class="headerlink" title="Maven继承和聚合特性"></a>Maven继承和聚合特性</h2><h3 id="Maven工程继承关系"><a href="#Maven工程继承关系" class="headerlink" title="Maven工程继承关系"></a>Maven工程继承关系</h3><ol>
+<li><p>继承概念</p>
+<p>Maven 继承是指在 Maven 的项目中，让一个项目从另一个项目中继承配置信息的机制。继承可以让我们在多个项目中共享同一配置信息，简化项目的管理和维护工作。</p>
+<p><img src="/img/ssm_img/13.png"></p>
+</li>
+<li><p>继承作用</p>
+<p>作用：在父工程中统一管理项目中的依赖信息,进行统一版本管理!</p>
+<p>它的背景是：</p>
+<ul>
+<li>对一个比较大型的项目进行了模块拆分。</li>
+<li>一个 project 下面，创建了很多个 module。</li>
+<li>每一个 module 都需要配置自己的依赖信息。<br>它背后的需求是：</li>
+<li>多个模块要使用同一个框架，它们应该是同一个版本，所以整个项目中使用的框架版本需要统一管理。</li>
+<li>使用框架时所需要的 jar 包组合（或者说依赖信息组合）需要经过长期摸索和反复调试，最终确定一个可用组合。这个耗费很大精力总结出来的方案不应该在新的项目中重新摸索。<br>通过在父工程中为整个项目维护依赖信息的组合既保证了整个项目使用规范、准确的 jar 包；又能够将以往的经验沉淀下来，节约时间和精力。</li>
+</ul>
+</li>
+<li><p>继承语法</p>
+<ul>
+<li>父工程</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.atguigu.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>pro03-maven-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 当前工程作为父工程，它要去管理子工程，所以打包方式必须是 pom --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>子工程</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 使用parent标签指定当前工程的父工程 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 父工程的坐标 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.atguigu.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>pro03-maven-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 子工程的坐标 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 如果子工程坐标中的groupId和version与父工程一致，那么可以省略 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- &lt;groupId&gt;com.atguigu.maven&lt;/groupId&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>pro04-maven-module<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt; --&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>父工程依赖统一管理</p>
+<ul>
+<li><p>父工程声明版本</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 使用dependencyManagement标签配置对依赖的管理 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 被管理的依赖并没有真正被引入到工程 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.0.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-beans<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.0.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.0.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-expression<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.0.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-aop<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.0.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子工程引用版本</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 子工程引用父工程中的依赖信息时，可以把版本号去掉。  --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 把版本号去掉就表示子工程中这个依赖的版本由父工程决定。 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 具体来说是由父工程的dependencyManagement来决定。 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-beans<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-expression<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-aop<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h3 id="Maven工程聚合关系"><a href="#Maven工程聚合关系" class="headerlink" title="Maven工程聚合关系"></a>Maven工程聚合关系</h3><ol>
+<li><p>聚合概念</p>
+<p>Maven 聚合是指将多个项目组织到一个父级项目中，通过触发父工程的构建,统一按顺序触发子工程构建的过程!!</p>
+</li>
+<li><p>聚合作用</p>
+<ol>
+<li>统一管理子项目构建：通过聚合，可以将多个子项目组织在一起，方便管理和维护。</li>
+<li>优化构建顺序：通过聚合，可以对多个项目进行顺序控制，避免出现构建依赖混乱导致构建失败的情况。</li>
+</ol>
+</li>
+<li><p>聚合语法</p>
+<p>父项目中包含的子项目列表。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">project</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>parent-project<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>child-project1<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>child-project2<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">modules</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>聚合演示</p>
+<p>通过触发父工程构建命令、引发所有子模块构建！产生反应堆！</p>
+<p><img src="/img/ssm_img/14.png"></p>
+</li>
+</ol>
+<h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h2 id="技术体系结构"><a href="#技术体系结构" class="headerlink" title="技术体系结构"></a>技术体系结构</h2><h3 id="总体技术体系"><a href="#总体技术体系" class="headerlink" title="总体技术体系"></a>总体技术体系</h3><ul>
+<li><p>单一架构</p>
+<p>一个项目，一个工程，导出为一个war包，在一个Tomcat上运行。也叫all in one。</p>
+<p><img src="/img/ssm_img/18.png"></p>
+<p>单一架构，项目主要应用技术框架为：Spring , SpringMVC , Mybatis</p>
+</li>
+<li><p>分布式架构</p>
+<p>一个项目（对应 IDEA 中的一个 project），拆分成很多个模块，每个模块是一个 IDEA 中的一个 module。每一个工程都是运行在自己的 Tomcat 上。模块之间可以互相调用。每一个模块内部可以看成是一个单一架构的应用。</p>
+<p><img src="/img/ssm_img/15.png"></p>
+<p>分布式架构，项目主要应用技术框架：SpringBoot (SSM), SpringCloud , 中间件等</p>
+</li>
+</ul>
+<h3 id="框架概念和理解"><a href="#框架概念和理解" class="headerlink" title="框架概念和理解"></a>框架概念和理解</h3><p>框架( Framework )是一个集成了基本结构、规范、设计模式、编程语言和程序库等基础组件的软件系统，它可以用来构建更高级别的应用程序。框架的设计和实现旨在解决特定领域中的常见问题，帮助开发人员更高效、更稳定地实现软件开发目标。</p>
+<p><img src="/img/ssm_img/17.png"></p>
+<p>框架的优点包括以下几点：</p>
+<ol>
+<li>提高开发效率：框架提供了许多预先设计好了的组件和工具，能够帮助开发人员快速进行开发。相较于传统手写代码，在框架提供的规范化环境中，开发者可以更快地实现项目的各种要求。</li>
+<li>降低开发成本：框架的提供标准化的编程语言、数据操作等代码片段，避免了重复开发的问题，降低了开发成本，提供深度优化的系统，降低了维护成本，增强了系统的可靠性。</li>
+<li>提高应用程序的稳定性：框架通常经过了很长时间的开发和测试，其中的许多组件、代码片段和设计模式都得到了验证。重复利用这些组件有助于减少bug的出现，从而提高了应用程序的稳定性。</li>
+<li>提供标准化的解决方案：框架通常是针对某个特定领域的，通过提供标准化的解决方案，可以为开发人员提供一种共同的语言和思想基础，有助于更好地沟通和协作。</li>
+</ol>
+<p>框架的缺点包括以下几个方面：</p>
+<ol>
+<li>学习成本高：框架通常具有特定的语言和编程范式。对于开发人员而言，需要花费时间学习其背后的架构、模式和逻辑，这对于新手而言可能会耗费较长时间。</li>
+<li>可能存在局限性：虽然框架提高了开发效率并可以帮助开发人员解决常见问题，但是在某些情况下，特定的应用需求可能超出框架的范围，从而导致应用程序无法满足要求。开发人员可能需要更多的控制权和自由度，同时需要在框架和应用程序之间进行权衡取舍。</li>
+<li>版本变更和兼容性问题：框架的版本发布和迭代通常会导致代码库的大规模变更，进而导致应用程序出现兼容性问题和漏洞。当框架变更时，需要考虑框架是否向下兼容，以及如何进行适当的测试、迁移和升级。</li>
+<li>架构风险：框架涉及到很多抽象和概念，如果开发者没有足够的理解和掌握其架构，可能会导致系统出现设计和架构缺陷，从而影响系统的健康性和安全性。</li>
+</ol>
+<p>站在文件结构的角度理解框架，可以将框架总结：<strong>框架 &#x3D; jar包+配置文件</strong></p>
+<p><img src="/img/ssm_img/16.png"></p>
+<p>莎士比亚说,”一千个观众眼中有一千个哈姆雷特” 即仁者见仁,智者见智.说每个人都会对作品有不同的理解，每个人对待任何事物都有自己的看法，同样的技术解决同样的问题会产生不同流程和风格的解决方案，而采用一种框架其实就是限制用户必须使用其规定的方案来实现，可以降低程序员之间沟通以及日后维护的成本！</p>
+<p>常用的单一架构JavaEE项目框架演进，从SSH、SSH2过渡到了SSM：SpringMVC、Spring、MyBatis。</p>
+<p>总之，框架已经对基础的代码进行了封装并提供相应的API，开发者在使用框架是直接调用封装好的API可以省去很多代码编写，从而提高工作效率和开发速度。</p>
+<h2 id="SpringFramework介绍"><a href="#SpringFramework介绍" class="headerlink" title="SpringFramework介绍"></a>SpringFramework介绍</h2><h3 id="Spring和SpringFramework概念"><a href="#Spring和SpringFramework概念" class="headerlink" title="Spring和SpringFramework概念"></a>Spring和SpringFramework概念</h3><p><a target="_blank" rel="noopener" href="https://spring.io/projects">https://spring.io/projects</a></p>
+<p><strong>广义的 Spring：Spring 技术栈</strong>（全家桶）</p>
+<p>广义上的 Spring 泛指以 Spring Framework 为基础的 Spring 技术栈。</p>
+<p>经过十多年的发展，Spring 已经不再是一个单纯的应用框架，而是逐渐发展成为一个由多个不同子项目（模块）组成的成熟技术，例如 Spring Framework、Spring MVC、SpringBoot、Spring Cloud、Spring Data、Spring Security 等，其中 Spring Framework 是其他子项目的基础。</p>
+<p>这些子项目涵盖了从企业级应用开发到云计算等各方面的内容，能够帮助开发人员解决软件发展过程中不断产生的各种实际问题，给开发人员带来了更好的开发体验。</p>
+<p><strong>狭义的 Spring：Spring Framework</strong>（基础框架）</p>
+<p>狭义的 Spring 特指 Spring Framework，通常我们将它称为 Spring 框架。</p>
+<p>Spring Framework（Spring框架）是一个开源的应用程序框架，由SpringSource公司开发，最初是为了解决企业级开发中各种常见问题而创建的。它提供了很多功能，例如：依赖注入（Dependency Injection）、面向切面编程（AOP）、声明式事务管理（TX）等。其主要目标是使企业级应用程序的开发变得更加简单和快速，并且Spring框架被广泛应用于Java企业开发领域。</p>
+<p>Spring全家桶的其他框架都是以SpringFramework框架为基础！</p>
+<p><strong>对比理解：</strong></p>
+<p>QQ 和 腾讯</p>
+<p>腾讯 &#x3D; Spring</p>
+<p>QQ &#x3D; SpringFramework</p>
+<h3 id="SpringFramework主要功能模块"><a href="#SpringFramework主要功能模块" class="headerlink" title="SpringFramework主要功能模块"></a>SpringFramework主要功能模块</h3><p>SpringFramework框架结构图：</p>
+<p><img src="/img/ssm_img/19.png"></p>
+<table>
+<thead>
+<tr>
+<th>功能模块</th>
+<th>功能介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Core Container</td>
+<td>核心容器，在 Spring 环境下使用任何功能都必须基于 IOC 容器。</td>
+</tr>
+<tr>
+<td>AOP&amp;Aspects</td>
+<td>面向切面编程</td>
+</tr>
+<tr>
+<td>TX</td>
+<td>声明式事务管理。</td>
+</tr>
+<tr>
+<td>Spring MVC</td>
+<td>提供了面向Web应用程序的集成功能。</td>
+</tr>
+</tbody></table>
+<h3 id="SpringFramework-主要优势"><a href="#SpringFramework-主要优势" class="headerlink" title="SpringFramework 主要优势"></a>SpringFramework 主要优势</h3><ol>
+<li>丰富的生态系统：Spring 生态系统非常丰富，支持许多模块和库，如 Spring Boot、Spring Security、Spring Cloud 等等，可以帮助开发人员快速构建高可靠性的企业应用程序。</li>
+<li>模块化的设计：框架组件之间的松散耦合和模块化设计使得 Spring Framework 具有良好的可重用性、可扩展性和可维护性。开发人员可以轻松地选择自己需要的模块，根据自己的需求进行开发。</li>
+<li>简化 Java 开发：Spring Framework 简化了 Java 开发，提供了各种工具和 API，可以降低开发复杂度和学习成本。同时，Spring Framework 支持各种应用场景，包括 Web 应用程序、RESTful API、消息传递、批处理等等。</li>
+<li>不断创新和发展：Spring Framework 开发团队一直在不断创新和发展，保持与最新技术的接轨，为开发人员提供更加先进和优秀的工具和框架。</li>
+</ol>
+<p>因此，这些优点使得 Spring Framework 成为了一个稳定、可靠、且创新的框架，为企业级 Java 开发提供了一站式的解决方案。</p>
+<p>Spring 使创建 Java 企业应用程序变得容易。它提供了在企业环境中采用 Java 语言所需的一切，支持 Groovy 和 Kotlin 作为 JVM 上的替代语言，并且可以根据应用程序的需求灵活地创建多种架构。从Spring Framework 6.0.6开始，Spring 需要 Java 17+。</p>
+<h2 id="Spring-Ioc容器和核心概念"><a href="#Spring-Ioc容器和核心概念" class="headerlink" title="Spring Ioc容器和核心概念"></a>Spring Ioc容器和核心概念</h2><h3 id="组件和组件管理概念"><a href="#组件和组件管理概念" class="headerlink" title="组件和组件管理概念"></a>组件和组件管理概念</h3><h4 id="什么是组件"><a href="#什么是组件" class="headerlink" title="什么是组件"></a>什么是组件</h4><ul>
+<li><p>回顾常规的三层架构处理请求流程：</p>
+<p><img src="/img/ssm_img/20.png"></p>
+<p>整个项目就是由各种组件搭建而成的：</p>
+<p><img src="/img/ssm_img/21.png"></p>
+<h4 id="我们的期待"><a href="#我们的期待" class="headerlink" title="我们的期待"></a>我们的期待</h4><ul>
+<li>有人替我们创建组件的对象</li>
+<li>有人帮我们保存组件的对象</li>
+<li>有人帮助我们自动组装</li>
+<li>有人替我们管理事务</li>
+<li>有人协助我们整合其他框架</li>
+<li>……</li>
+</ul>
+<h4 id="Spring充当组件管理角色（IoC）"><a href="#Spring充当组件管理角色（IoC）" class="headerlink" title="Spring充当组件管理角色（IoC）"></a>Spring充当组件管理角色（IoC）</h4><p>那么谁帮我们完成我们的期待，帮我们管理组件呢？</p>
+<p>当然是Spring 框架了！</p>
+<p>组件可以完全交给Spring 框架进行管理，Spring框架替代了程序员原有的new对象和对象属性赋值动作等！</p>
+<p>Spring具体的组件管理动作包含：</p>
+<ul>
+<li>组件对象实例化</li>
+<li>组件属性属性赋值</li>
+<li>组件对象之间引用</li>
+<li>组件对象存活周期管理</li>
+<li>……<br>我们只需要编写元数据（配置文件）告知Spring 管理哪些类组件和他们的关系即可！<br>注意：组件是映射到应用程序中所有可重用组件的Java对象，应该是可复用的功能对象！</li>
+<li>组件一定是对象</li>
+<li>对象不一定是组件<br>综上所述，Spring 充当一个组件容器，创建、管理、存储组件，减少了我们的编码压力，让我们更加专注进行业务编写！</li>
+</ul>
+<h4 id="组件交给Spring管理优势"><a href="#组件交给Spring管理优势" class="headerlink" title="组件交给Spring管理优势!"></a>组件交给Spring管理优势!</h4><ol>
+<li>降低了组件之间的耦合性：Spring IoC容器通过依赖注入机制，将组件之间的依赖关系削弱，减少了程序组件之间的耦合性，使得组件更加松散地耦合。</li>
+<li>提高了代码的可重用性和可维护性：将组件的实例化过程、依赖关系的管理等功能交给Spring IoC容器处理，使得组件代码更加模块化、可重用、更易于维护。</li>
+<li>方便了配置和管理：Spring IoC容器通过XML文件或者注解，轻松的对组件进行配置和管理，使得组件的切换、替换等操作更加的方便和快捷。</li>
+<li>交给Spring管理的对象（组件），方可享受Spring框架的其他功能（AOP,声明事务管理）等</li>
+</ol>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">鱼小红</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/05/27/SSM%E6%A1%86%E6%9E%B6/">http://example.com/2024/05/27/SSM%E6%A1%86%E6%9E%B6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">鱼小红的前端小窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Spring/">Spring</a><a class="post-meta__tags" href="/tags/SpringMVC/">SpringMVC</a><a class="post-meta__tags" href="/tags/MyBatis/">MyBatis</a><a class="post-meta__tags" href="/tags/Maven/">Maven</a></div><div class="post-share"><div class="social-share" data-image="https://img-blog.csdnimg.cn/2020011822264939.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/11/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" title="数据结构与算法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">数据结构与算法</div></div><div class="info-2"><div class="info-item-1">112233</div></div></div></a><a class="pagination-related" href="/2024/03/11/C%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0/" title="C语言复习"><img class="cover" src="/img/c_img/1.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">C语言复习</div></div><div class="info-2"><div class="info-item-1">基础部分布尔类型在C89的时候，没有特意的定义布尔这个类型，只能使用宏定义的方式，但是0表示假，除0外都表示为真。所以宏定义使用方法如下： 12345678910111213141516#include &lt;stdio.h&gt;#define BOOL int#define TRUE 1#define FALSE 0int main()&#123;	BOOL flag = TRUE;	BOOL fake = FALSE;		if(flag)&#123;		printf(&quot;我是flag，我是真值&quot;);	&#125;		return 0;&#125;  在C99中，增加了布尔类型 _Bool，但是这个类型的值其实还是整数类型的别名，还是使用0代表false，使用1代表true，其他的非零数值都会被存储为1，所以 _Bool类型也是一种整数类型。 123456789101112#include &lt;stdio.h&gt;int main()&#123;	_Bool flag = 1;	_Bool fake =...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">鱼小红</div><div class="author-info-description">记录学习过程</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/YuXiaohong666"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to my website</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Maven"><span class="toc-number">1.</span> <span class="toc-text">Maven</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven%E5%BF%AB%E9%80%9F%E7%AE%80%E4%BB%8B%E5%92%8C%E5%85%A5%E9%97%A8"><span class="toc-number">1.1.</span> <span class="toc-text">Maven快速简介和入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Maven%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.1.</span> <span class="toc-text">Maven介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Maven%E4%B8%BB%E8%A6%81%E4%BD%9C%E7%94%A8%E7%90%86%E8%A7%A3"><span class="toc-number">1.1.2.</span> <span class="toc-text">Maven主要作用理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Maven%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.3.</span> <span class="toc-text">Maven安装和配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8EIDEA%E7%9A%84Maven%E5%B7%A5%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">1.2.</span> <span class="toc-text">基于IDEA的Maven工程的创建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%B3%E7%90%86Maven%E5%B7%A5%E7%A8%8BGAVP%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.1.</span> <span class="toc-text">梳理Maven工程GAVP属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#GAV%E9%81%B5%E5%BE%AA%E4%B8%80%E4%B8%8B%E8%A7%84%E5%88%99"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">GAV遵循一下规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Packaging%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">Packaging定义规则</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA%E6%9E%84%E5%BB%BAMaven-JavaSE%E5%B7%A5%E7%A8%8B"><span class="toc-number">1.2.2.</span> <span class="toc-text">IDEA构建Maven JavaSE工程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA%E6%9E%84%E5%BB%BAMaven-JavaEE%E5%B7%A5%E7%A8%8B"><span class="toc-number">1.2.3.</span> <span class="toc-text">IDEA构建Maven JavaEE工程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E5%88%9B%E5%BB%BAweb%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">手动创建web项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6%E5%88%9B%E5%BB%BAweb%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">使用插件创建web项目</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Maven%E5%B7%A5%E7%A8%8B%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E8%AF%B4%E6%98%8E"><span class="toc-number">1.2.4.</span> <span class="toc-text">Maven工程项目结构说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD%E4%BE%9D%E8%B5%96%E5%92%8C%E6%9E%84%E5%BB%BA%E7%AE%A1%E7%90%86"><span class="toc-number">1.3.</span> <span class="toc-text">Maven核心功能依赖和构建管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E5%92%8C%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.1.</span> <span class="toc-text">依赖管理和配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E4%BC%A0%E9%80%92%E5%92%8C%E5%86%B2%E7%AA%81"><span class="toc-number">1.3.2.</span> <span class="toc-text">依赖传递和冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E5%AF%BC%E5%85%A5%E5%A4%B1%E8%B4%A5%E5%9C%BA%E6%99%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.3.3.</span> <span class="toc-text">依赖导入失败场景和解决方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E6%9E%84%E5%BB%BA%E7%AE%A1%E7%90%86%E5%92%8C%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.4.</span> <span class="toc-text">扩展构建管理和插件配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven%E7%BB%A7%E6%89%BF%E5%92%8C%E8%81%9A%E5%90%88%E7%89%B9%E6%80%A7"><span class="toc-number">1.4.</span> <span class="toc-text">Maven继承和聚合特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Maven%E5%B7%A5%E7%A8%8B%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB"><span class="toc-number">1.4.1.</span> <span class="toc-text">Maven工程继承关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Maven%E5%B7%A5%E7%A8%8B%E8%81%9A%E5%90%88%E5%85%B3%E7%B3%BB"><span class="toc-number">1.4.2.</span> <span class="toc-text">Maven工程聚合关系</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring"><span class="toc-number">2.</span> <span class="toc-text">Spring</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.</span> <span class="toc-text">技术体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E4%BD%93%E6%8A%80%E6%9C%AF%E4%BD%93%E7%B3%BB"><span class="toc-number">2.1.1.</span> <span class="toc-text">总体技术体系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E6%A6%82%E5%BF%B5%E5%92%8C%E7%90%86%E8%A7%A3"><span class="toc-number">2.1.2.</span> <span class="toc-text">框架概念和理解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SpringFramework%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.2.</span> <span class="toc-text">SpringFramework介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring%E5%92%8CSpringFramework%E6%A6%82%E5%BF%B5"><span class="toc-number">2.2.1.</span> <span class="toc-text">Spring和SpringFramework概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SpringFramework%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97"><span class="toc-number">2.2.2.</span> <span class="toc-text">SpringFramework主要功能模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SpringFramework-%E4%B8%BB%E8%A6%81%E4%BC%98%E5%8A%BF"><span class="toc-number">2.2.3.</span> <span class="toc-text">SpringFramework 主要优势</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-Ioc%E5%AE%B9%E5%99%A8%E5%92%8C%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="toc-number">2.3.</span> <span class="toc-text">Spring Ioc容器和核心概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E5%92%8C%E7%BB%84%E4%BB%B6%E7%AE%A1%E7%90%86%E6%A6%82%E5%BF%B5"><span class="toc-number">2.3.1.</span> <span class="toc-text">组件和组件管理概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6"><span class="toc-number">2.3.1.1.</span> <span class="toc-text">什么是组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%91%E4%BB%AC%E7%9A%84%E6%9C%9F%E5%BE%85"><span class="toc-number">2.3.1.2.</span> <span class="toc-text">我们的期待</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Spring%E5%85%85%E5%BD%93%E7%BB%84%E4%BB%B6%E7%AE%A1%E7%90%86%E8%A7%92%E8%89%B2%EF%BC%88IoC%EF%BC%89"><span class="toc-number">2.3.1.3.</span> <span class="toc-text">Spring充当组件管理角色（IoC）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E4%BA%A4%E7%BB%99Spring%E7%AE%A1%E7%90%86%E4%BC%98%E5%8A%BF"><span class="toc-number">2.3.1.4.</span> <span class="toc-text">组件交给Spring管理优势!</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" title="数据结构与算法">数据结构与算法</a><time datetime="2024-11-13T01:57:13.000Z" title="发表于 2024-11-13 09:57:13">2024-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/27/SSM%E6%A1%86%E6%9E%B6/" title="SSM框架"><img src="https://img-blog.csdnimg.cn/2020011822264939.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SSM框架"/></a><div class="content"><a class="title" href="/2024/05/27/SSM%E6%A1%86%E6%9E%B6/" title="SSM框架">SSM框架</a><time datetime="2024-05-27T01:32:53.000Z" title="发表于 2024-05-27 09:32:53">2024-05-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/03/11/C%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0/" title="C语言复习"><img src="/img/c_img/1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言复习"/></a><div class="content"><a class="title" href="/2024/03/11/C%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0/" title="C语言复习">C语言复习</a><time datetime="2024-03-11T03:24:45.000Z" title="发表于 2024-03-11 11:24:45">2024-03-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/03/JavaEE-JDBC/" title="JaveEE-JDBC"><img src="/img/jdbc_img/3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JaveEE-JDBC"/></a><div class="content"><a class="title" href="/2023/12/03/JavaEE-JDBC/" title="JaveEE-JDBC">JaveEE-JDBC</a><time datetime="2023-12-03T08:41:36.000Z" title="发表于 2023-12-03 16:41:36">2023-12-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/10/27/Unity/" title="Unity"><img src="https://1000logos.net/wp-content/uploads/2021/10/Unity-logo.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity"/></a><div class="content"><a class="title" href="/2023/10/27/Unity/" title="Unity">Unity</a><time datetime="2023-10-27T03:18:23.000Z" title="发表于 2023-10-27 11:18:23">2023-10-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 鱼小红</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

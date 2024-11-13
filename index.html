@@ -1,0 +1,248 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>鱼小红的前端小窝 - 博客</title><meta name="author" content="鱼小红"><meta name="copyright" content="鱼小红"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="记录学习过程">
+<meta property="og:type" content="website">
+<meta property="og:title" content="鱼小红的前端小窝">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="鱼小红的前端小窝">
+<meta property="og:description" content="记录学习过程">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/touxiang.jpg">
+<meta property="article:author" content="鱼小红">
+<meta property="article:tag" content="博客、前端、编程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/touxiang.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":true,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '鱼小红的前端小窝',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(img/background.png);"></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/mainScene.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">鱼小红的前端小窝</span></a></span><div id="menus"></div></nav><div id="site-info"><h1 id="site-title">鱼小红的前端小窝</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/11/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" title="数据结构与算法">数据结构与算法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-11-13T01:57:13.000Z" title="发表于 2024-11-13 09:57:13">2024-11-13</time></span></div><div class="content">112233</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/05/27/SSM%E6%A1%86%E6%9E%B6/" title="SSM框架"><img class="post-bg" src="https://img-blog.csdnimg.cn/2020011822264939.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SSM框架"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/05/27/SSM%E6%A1%86%E6%9E%B6/" title="SSM框架"><i class="fas fa-thumbtack sticky"></i>SSM框架</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-27T01:32:53.000Z" title="发表于 2024-05-27 09:32:53">2024-05-27</time></span></div><div class="content">...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2024/03/11/C%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0/" title="C语言复习"><img class="post-bg" src="/img/c_img/1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言复习"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/03/11/C%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0/" title="C语言复习">C语言复习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-11T03:24:45.000Z" title="发表于 2024-03-11 11:24:45">2024-03-11</time></span></div><div class="content">基础部分布尔类型在C89的时候，没有特意的定义布尔这个类型，只能使用宏定义的方式，但是0表示假，除0外都表示为真。所以宏定义使用方法如下： 12345678910111213141516#include &lt;stdio.h&gt;#define BOOL int#define TRUE 1#define FALSE 0int main()&#123;	BOOL flag = TRUE;	BOOL fake = FALSE;		if(flag)&#123;		printf(&quot;我是flag，我是真值&quot;);	&#125;		return 0;&#125;  在C99中，增加了布尔类型 _Bool，但是这个类型的值其实还是整数类型的别名，还是使用0代表false，使用1代表true，其他的非零数值都会被存储为1，所以 _Bool类型也是一种整数类型。 123456789101112#include &lt;stdio.h&gt;int main()&#123;	_Bool flag = 1;	_Bool fake =...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/12/03/JavaEE-JDBC/" title="JaveEE-JDBC"><img class="post-bg" src="/img/jdbc_img/3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JaveEE-JDBC"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/12/03/JavaEE-JDBC/" title="JaveEE-JDBC">JaveEE-JDBC</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-03T08:41:36.000Z" title="发表于 2023-12-03 16:41:36">2023-12-03</time></span></div><div class="content">JDBC概述引入连接MySql的jar包 前往https://mvnrepository.com/搜索对应版本jar包进行下载。  2. 在工程项目下创建一个lib文件夹用于存放jar包，右键lib文件将将其添加为库。  JDBC基本使用步骤 注册驱动 获取链接 创建发送sql语句对象 发送sql语句，并获取返回结果 结果集解析 资源关闭   具体操作  12345678910111213141516171819202122232425262728293031323334353637383940414243444546package com.geo.api.statement;import com.mysql.cj.jdbc.Driver;import java.sql.*;/** * @author yuxiaohong * @package com.geo.api.statement * @date 2023/12/3 17:07 * @description */public class StatementQueryPart &#123;    public static...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/10/27/Unity/" title="Unity"><img class="post-bg" src="https://1000logos.net/wp-content/uploads/2021/10/Unity-logo.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/10/27/Unity/" title="Unity">Unity</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-10-27T03:18:23.000Z" title="发表于 2023-10-27 11:18:23">2023-10-27</time></span></div><div class="content">初识Unity编辑器的基本使用在游戏场景当中，长按右键拖移可以以当前点为圆心进行视角转动，长按鼠标滚轮可以进行位置的移动。 C#脚本生命周期函数123456789101112131415161718192021222324252627282930313233343536373839404142434445464748using System.Collections;using System.Collections.Generic;using UnityEngine;public class Move : MonoBehaviour&#123;    //当脚本组件加载的时候调用一次    private void Awake()    &#123;    &#125;    //当脚本组件激活的时候调用一次    private void OnEnable()    &#123;    &#125;    //在OnEnable调用之后调用一次    void Start()    &#123;    &#125;    //每帧调用一次    void Update()   ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/06/06/CocosCreator/" title="CocosCreator教程"><img class="post-bg" src="/img/Cocos_img/1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CocosCreator教程"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/06/CocosCreator/" title="CocosCreator教程">CocosCreator教程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-06T01:09:33.000Z" title="发表于 2023-06-06 09:09:33">2023-06-06</time></span></div><div class="content">场景管理新建一个场景1.点击左上角的文件，在对话框中点击新建场景。2.ctrl+n直接创建新的场景。在创建好一个新的场景之后，我们发现左上角的层级管理器被恢复到默认的状态了。这就表明我们创建新的场景成功了，并且切换到了新的场景当中。创建好之后，点击保存，将场景文件保存起来。然后在左下角的资源管理器当中就可以进行手动的场景切换了。 代码中进行切换场景的操作1234567891011121314// 加载第二个场景cc.director.loadScene(&quot;scene2&quot;,function()&#123;// 因为在加载场景的时候，如果场景资源特别大，就会长时间卡顿，会造成用户体验感下降，所以通常在加载新场景的时候会添加一个进度条作为过渡&#125;)// 预加载，对于一些有较大资源的场景，最好进行预加载，以节省场景切换的时间cc.director.preloadScene(&quot;scene2&quot;, function () &#123;    // 预加载完成之后，场景不会立即切换，只是提前加载如内存当中了&#125;)//...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/03/14/JavaWeb/" title="JavaWeb"><img class="post-bg" src="/img/javaweb_img/25.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaWeb"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/14/JavaWeb/" title="JavaWeb">JavaWeb</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-14T03:15:06.000Z" title="发表于 2023-03-14 11:15:06">2023-03-14</time></span></div><div class="content">HTMLCSSJavaScriptJQuery什么是JQueryJQuery，顾名思义，就是JavaScript和Query（查询），它是辅助JavaScript开发的js类库 使用JQuery的好处JQuery是免费的、开源的，JQuery的语法设计可以使开发更加便捷，例如操作文档对象、选择DOM元素、制作动画效果、事件处理、使用ajax以及其他功能。 JQuery的核心函数$是JQuery的核心函数，能完成JQuery的很多功能，$()就是调用$这个函数。1.传入参数为函数时：表示页面加载完成之后。相当于window.onload&#x3D;function(){}2.传入参数为HTML字符串时：会为我们创建这个html标签对象3.传入参数为选择器字符串时：如$(“#id属性值”)：id选择器，还适用于标签名和类名4.传入参数为DOM对象时，将DOM对象包装为JQuery对象返回 12345678$(function () &#123;  //表示页面加载完成之后，相当于window.onload=function()&#123;&#125;    let $btnObj...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/03/12/golang/" title="Golang"><img class="post-bg" src="/img/go_img/12.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Golang"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/12/golang/" title="Golang">Golang</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-12T03:21:20.000Z" title="发表于 2023-03-12 11:21:20">2023-03-12</time></span></div><div class="content">Golang开山篇Golang的学习方向 区块链的应用与开发   Go语言的特点1.从C语言中继承了很多理念，包括表达式语法，控制结构，基础数据类型，调用参数传值，指针等等。2.引入了包的概念，用于组织程序结构，Go语言的一个文件都要归属于一个包，而不能单独存在。3.垃圾回收机制，内存自动回收。不需要开发人员管理。4.天然并发（重要特点）(1)从语言层面支持并发，实现简单。(2)goroutine，轻量级线程，可实现大并发处理，高效利用多核。(3)基于CPS并发模型实现。5.吸收了管道通信机制，形成Go语言特有的管道channel，通过管道channel，可以实现不同的goroutine之间的相互通信。6.函数可以返回多个值。7.新的创新：比如切片、延时执行defer等。 Windows下搭建Go开发环境-安装和配置SDK1.SDK的全称（Software Development Kit...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/01/28/git/" title="Git"><img class="post-bg" src="/img/git_img/53.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/01/28/git/" title="Git">Git</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-28T14:49:23.000Z" title="发表于 2023-01-28 22:49:23">2023-01-28</time></span></div><div class="content">初识GitGit简介git是一个免费的、开源的分布式版本控制系统，可以快速高效的处理从小型到大型的各种项目。 版本控制工具集中版本控制工具：CVS、SVN、VSS优点：每个人都可以在一定程度上看到项目中的其他人在做些什么。管理员也可以轻松掌握每个开发者的权限，并且管理一个集中化的版本控制系统，要远比在各个客户端上维护本地数据库来的轻松容易。 缺点：中央服务器的单点故障，如果服务器宕机一小时，那么在这一小时内，谁都无法提交更新，也就无法协同工作。 分布式版本控制工具：Git、Mercurial、Darcs解决了集中式版本控制系统的缺陷 优点：服务器断网的情况下也可以进行开发（因为版本控制是在本地进行的）每个客户端保存的也都是完整的项目（包含历史记录，更加安全） 代码托管中心基于网络服务器的远程代码仓库，简称为远程库。 局域网GitLab 互联网GitHubGitee码云 Git常用命令   命令名称 作用    git config –global user.name 用户名 设置用户签名   git config –global user.email...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/01/09/Vue/" title="Vue"><img class="post-bg" src="https://tse2-mm.cn.bing.net/th/id/OIP-C.CPDIH8BWrGipHRJ6o6E2VwHaEc?w=286&amp;h=180&amp;c=7&amp;r=0&amp;o=5&amp;pid=1.7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/01/09/Vue/" title="Vue">Vue</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-09T14:00:33.000Z" title="发表于 2023-01-09 22:00:33">2023-01-09</time></span></div><div class="content">初识Vue 引入Vue.js文件 想让Vue工作，必须创建一个Vue实例，且要传入一个配置对象。 root容器里的代码依然能符合html规范，只不过混入了一些特殊的Vue语法。 root容器里的代码被称为【Vue】模板。 Vue实例和容器是一一对应的。 真实开发中只有一个Vue实例，并且会配合着组件一起使用。 中的xxx要写js表达式，且xxx可以自动读取到data中的所有属性。 一旦data中的数据发生变化，那么页面中用到该数据的地方也会自动更新。  123456789101112131415161718&lt;div class=&quot;root&quot;&gt;  &lt;h1&gt;Hello,&#123;&#123;name&#125;&#125;&lt;/h1&gt;&lt;/div&gt;&lt;div class=&quot;root&quot;&gt;  &lt;h1&gt;Hello,&#123;&#123;name&#125;&#125;&lt;/h1&gt;&lt;/div&gt;&lt;script&gt; ...</div></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">鱼小红</div><div class="author-info-description">记录学习过程</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/YuXiaohong666"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to my website</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" title="数据结构与算法">数据结构与算法</a><time datetime="2024-11-13T01:57:13.000Z" title="发表于 2024-11-13 09:57:13">2024-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/27/SSM%E6%A1%86%E6%9E%B6/" title="SSM框架"><img src="https://img-blog.csdnimg.cn/2020011822264939.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SSM框架"/></a><div class="content"><a class="title" href="/2024/05/27/SSM%E6%A1%86%E6%9E%B6/" title="SSM框架">SSM框架</a><time datetime="2024-05-27T01:32:53.000Z" title="发表于 2024-05-27 09:32:53">2024-05-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/03/11/C%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0/" title="C语言复习"><img src="/img/c_img/1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言复习"/></a><div class="content"><a class="title" href="/2024/03/11/C%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0/" title="C语言复习">C语言复习</a><time datetime="2024-03-11T03:24:45.000Z" title="发表于 2024-03-11 11:24:45">2024-03-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/03/JavaEE-JDBC/" title="JaveEE-JDBC"><img src="/img/jdbc_img/3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JaveEE-JDBC"/></a><div class="content"><a class="title" href="/2023/12/03/JavaEE-JDBC/" title="JaveEE-JDBC">JaveEE-JDBC</a><time datetime="2023-12-03T08:41:36.000Z" title="发表于 2023-12-03 16:41:36">2023-12-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/10/27/Unity/" title="Unity"><img src="https://1000logos.net/wp-content/uploads/2021/10/Unity-logo.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity"/></a><div class="content"><a class="title" href="/2023/10/27/Unity/" title="Unity">Unity</a><time datetime="2023-10-27T03:18:23.000Z" title="发表于 2023-10-27 11:18:23">2023-10-27</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/JSON/" style="font-size: 1.1em; color: #999">JSON</a> <a href="/tags/XML/" style="font-size: 1.1em; color: #999">XML</a> <a href="/tags/JavaScript/" style="font-size: 1.5em; color: #99a9bf">JavaScript</a> <a href="/tags/Maven/" style="font-size: 1.1em; color: #999">Maven</a> <a href="/tags/Java/" style="font-size: 1.1em; color: #999">Java</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">数据结构</a> <a href="/tags/JSP/" style="font-size: 1.1em; color: #999">JSP</a> <a href="/tags/ES6/" style="font-size: 1.1em; color: #999">ES6</a> <a href="/tags/JQuery/" style="font-size: 1.1em; color: #999">JQuery</a> <a href="/tags/JSTL%E6%A0%87%E7%AD%BE%E5%BA%93/" style="font-size: 1.1em; color: #999">JSTL标签库</a> <a href="/tags/MyBatis/" style="font-size: 1.1em; color: #999">MyBatis</a> <a href="/tags/Vue/" style="font-size: 1.1em; color: #999">Vue</a> <a href="/tags/SpringMVC/" style="font-size: 1.1em; color: #999">SpringMVC</a> <a href="/tags/Spring/" style="font-size: 1.1em; color: #999">Spring</a> <a href="/tags/Cookie/" style="font-size: 1.1em; color: #999">Cookie</a> <a href="/tags/TypeScript/" style="font-size: 1.1em; color: #999">TypeScript</a> <a href="/tags/CocosCreator/" style="font-size: 1.1em; color: #999">CocosCreator</a> <a href="/tags/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 1.1em; color: #999">EL表达式</a> <a href="/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/tags/C/" style="font-size: 1.1em; color: #999">C</a> <a href="/tags/Golang/" style="font-size: 1.1em; color: #999">Golang</a> <a href="/tags/Session/" style="font-size: 1.1em; color: #999">Session</a> <a href="/tags/JavaWeb/" style="font-size: 1.1em; color: #999">JavaWeb</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/" title="查看更多"><i class="fas fa-angle-right"></i></a>
+    </div>
+    <ul class="card-archive-list">
+  
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/11/">
+          <span class="card-archive-list-date">十一月 2024</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/05/">
+          <span class="card-archive-list-date">五月 2024</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/03/">
+          <span class="card-archive-list-date">三月 2024</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2023/12/">
+          <span class="card-archive-list-date">十二月 2023</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2023/10/">
+          <span class="card-archive-list-date">十月 2023</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2023/06/">
+          <span class="card-archive-list-date">六月 2023</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2023/03/">
+          <span class="card-archive-list-date">三月 2023</span>
+          <span class="card-archive-list-count">2</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2023/01/">
+          <span class="card-archive-list-date">一月 2023</span>
+          <span class="card-archive-list-count">3</span>
+        </a>
+      </li>
+    </ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">12</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">141.4k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-11-13T06:35:58.622Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 鱼小红</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = []
+        sub.unshift(data.hitokoto, from)
+        typedJSFn.init(sub)
+      } else {
+        document.getElementById('subtitle').textContent = data.hitokoto
+      }
+    })
+}
+typedJSFn.run(subtitleType)
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
